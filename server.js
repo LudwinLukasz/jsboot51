@@ -1,9 +1,10 @@
 var fs = require('fs');
+var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 var fileContent;
 
-//app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 app.get('/getNote', function (req, res) {
 	fs.readFile('./test.json', 'utf8', function(err, data) {
